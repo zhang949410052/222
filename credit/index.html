@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no, email=no"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="box">
+        <p class="quick">快速搜索消费贷款</p>
+        <p class="clearfix dai">
+            <span class="fl">贷款金额:</span>
+            <span class="fr">不足一万可用小数表示</span>
+        </p>
+        <div class="inp" id="inp">
+            <p class="clearfix" id="shi">
+                <span class="fl number">30</span>
+                <span class="fr">万元</span>
+            </p>
+            <div class="btn">
+                <span class="glyphicon glyphicon-chevron-down span1"></span>
+                <span class="glyphicon glyphicon-chevron-up span2"></span>
+            </div>
+            <ul class="sel">
+                <li class="a" ><span>5</span><span>万元</span></li>
+                <li><span>10</span><span>万元</span></li>
+                <li><span>15</span><span>万元</span></li>
+                <li><span>20</span><span>万元</span></li>
+                <li><span>25</span><span>万元</span></li>
+                <li><span>30</span><span>万元</span></li>
+            </ul>
+        </div>
+        <p class="clearfix dai">
+            <span>贷款期限:</span>
+        </p>
+        <div class="inp" id="inp2">
+            <p class="clearfix">
+                <span class="fl number">18</span>
+                <span class="fr">个月</span>
+            </p>
+            <div class="btn">
+                <span class="glyphicon glyphicon-chevron-down span1"></span>
+                <span class="glyphicon glyphicon-chevron-up span2"></span>
+            </div>
+            <ul class="sel">
+                <li></li>
+                <li><span>6</span><span>个月</span></li>
+                <li><span>1</span><span>年</span></li>
+                <li><span>18</span><span>个月</span></li>
+                <li><span>2</span><span>年</span></li>
+                <li><span>3</span><span>年</span></li>
+                <li><span>5</span><span>年</span></li>
+                <li><span>10</span><span>年</span></li>
+            </ul>
+        </div>
+        <p class="search">搜一下</p>
+        <p class="foo">9164种信贷产品 2000家银行 1403家小贷公司</p>
+    </div>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function () {
+
+            event("#inp")
+            event("#inp2")
+
+            function event(id) {
+                $(id+" .btn").click(function () {
+                    $(id+" .sel").slideDown();
+                    $(id+" .span1").css("display","block");
+                    $(id+" .span2").css("display","none");
+                });
+                var ali=$(id+" .sel li");
+                ali.click(function () {
+                    $(id+" .number").html(parseInt($(this).children("span").html()));
+                    $(id+" .sel").hide();
+                    $(id+" .span2").css("display","block");
+                    $(id+" .span1").css("display","none");
+                })
+            }
+
+        })
+    </script>
+</body>
+</html>
